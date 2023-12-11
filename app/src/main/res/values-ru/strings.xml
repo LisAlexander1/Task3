@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Задание 3</string>
+    <string name="taskText" >Калькулятор стоимости рецепта</string>
+    <string name="resultButton">Результат</string>
+    <string name="noResult">За бесплатно только кости</string>
+    <string name="ingredient_name">название</string>
+    <string name="ingredient_volume">в упаковке</string>
+    <string name="price">цена</string>
+    <string name="in_recipe">в рецепте</string>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Task 3</string>
+    <string name="taskText">Recipe cost calculator</string>
+    <string name="name" translatable="false">Lis Alexander</string>
+    <string name="emojiCake" translatable="false">&#x1F96A;</string>
+    <string name="emojiBone" translatable="false">&#x1F9B4;</string>
+    <string name="resultButton">Result</string>
+    <string name="noResult">For free, only the bones</string>
+    <string name="ingredient_name">name</string>
+    <string name="ingredient_volume">in a package</string>
+    <string name="price">price</string>
+    <string name="in_recipe">in recipe</string>
+</resources>
+
