@@ -1,34 +1,22 @@
 package com.example.task3
 
-class Ingredient(
-    name: String,
-    price: Double?,
-    volume: Double?,
-    quantity: Double?
-) {
-
+class Ingredient() {
 
     var name: String = ""
 
-    var price: Double? = null
+    var price: Double = 0.0
 
-    var volume: Double? = null
+    var volume: Double = 0.0
 
-    var quantity: Double? = null
+    var quantity: Double = 0.0
 
 
-    init {
-        this.name = name
-        this.price = price
-        this.volume = volume
-        this.quantity = quantity
-    }
 
     fun getTotalPrice(): Double {
-        if (volume ?: 0.0 == 0.0)
+        if (volume == 0.0)
             return 0.0
 
-        return price ?: 0 / volume!! * (quantity ?: 0.0)
+        return price / volume * quantity
     }
 
 }

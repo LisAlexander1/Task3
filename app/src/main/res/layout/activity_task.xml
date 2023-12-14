@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:padding="50dp"
+        android:padding="10dp"
         android:layout_height="match_parent">
         <TextView
             android:layout_width="wrap_content"
@@ -17,13 +17,46 @@
             android:id="@+id/name"
             android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ingredient_list"
+
+        <TableLayout
+            android:id="@+id/ingredient_table"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/name"
-            android:layout_above="@+id/resultButton"
-            android:layout_marginBottom="10dp"/>
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/ingredient_volume"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/ingredient_volume"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/ingredient_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/in_recipe"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/ingredient_price"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/price"
+                    android:inputType="numberDecimal" />
+            </TableRow>
+        </TableLayout>
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ingredient_table"
+            android:layout_above="@+id/resultButton"/>
         <Button
             android:id="@+id/resultButton"
             android:layout_width="match_parent"

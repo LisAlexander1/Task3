@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +21,13 @@ class MainActivity : AppCompatActivity() {
         resultOut = findViewById(R.id.result)
         emojiOut = findViewById(R.id.emoji)
 
-        var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {result ->
+        var resultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {result: ActivityResult ->
             if (result.resultCode == ResultCode.RESULT_OK) {
-                val data: Intent? = result.data
-                resultOut.text = data?.extras?.getString("totalPrice")
+                val data = result.data
+                val result = data!!.getDoubleExtra("totalPrice", 0.0)
+                resultOut.text = "Итоговая цена: $${"%.2f".format(result)}"
                 emojiOut.text = resources.getString(R.string.emojiCake)
 
             } else if (result.resultCode == ResultCode.NO_RESULT) {
